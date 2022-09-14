@@ -12,6 +12,10 @@ const CartScreen = () => {
         cart: { cartItems },
     } = state; 
 
+    const removeItemHandler = (item) => {
+        dispatch({ type: 'CART_REMOVE_ITEM', payload: item})
+    }
+
     return (
         <Layout title="Shopping Cart">
             <h1 className="mb-4 text-xl">Shopping Cart</h1>
@@ -57,7 +61,7 @@ const CartScreen = () => {
                                                 {item.price}
                                             </td>
                                             <td className="p-5 text-right">
-                                                <button>
+                                                <button onClick={() => removeItemHandler(item)}>
                                                     <XCircleIcon className="h-5 w-5"></XCircleIcon>
                                                 </button>
                                             </td>
