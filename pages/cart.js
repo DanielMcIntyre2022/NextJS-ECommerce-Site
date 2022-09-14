@@ -4,8 +4,10 @@ import { XCircleIcon } from '@heroicons/react/outline';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from "next/router";
 
 const CartScreen = () => {
+    const router = useRouter();
 
     const { state, dispatch } = useContext(Store);
     const {
@@ -69,6 +71,23 @@ const CartScreen = () => {
                                     ))}
                                 </tbody>
                             </table>
+                        </div>
+                        <div className="card p-5">
+                            <ul>
+                                <li>
+                                    <div className="pb-3 text-xl">
+                                        Subtotal ({ cartItems.reduce((a,c) => a + c.quanity, 0)})
+                                        { ''}
+                                        : $
+                                        {cartItems.reduce((a,c) => a + c.quanity * c.price, 0)}
+                                    </div>
+                                </li>
+                                <li>
+                                    <button onClick={() => router.push('/shipping')} className="primary-button w-full">
+                                        Check out
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 )

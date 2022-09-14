@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout';
 import { useContext } from 'react';
-import {useRouter} from 'next/router';
+import Router, {useRouter} from 'next/router';
 import data from '../../utils/data';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -25,7 +25,8 @@ const ProductScreen = () => {
             return;
         }
 
-        dispatch({ type: 'CART_ADD_ITEM', payload: {...product, quanity }})
+        dispatch({ type: 'CART_ADD_ITEM', payload: {...product, quanity }});
+        Router.push('/cart');
     };
 
     return (
