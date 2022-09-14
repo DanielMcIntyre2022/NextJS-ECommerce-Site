@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Layout = ({title, children}) => {
     return (
@@ -8,9 +9,17 @@ const Layout = ({title, children}) => {
         <meta name="description" content="E-Commerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <div>
+        <div className='flex min-h-screen flex-col justify-between'>
             <header>
-
+                <nav className='flex h-12 items-center px-4 justify-between shadow-md'>
+                    <Link href="/">
+                        <a className='text-lg font-bold'>E-Commerce</a>
+                    </Link>
+                    <div>
+                        <Link href="/cart">Cart</Link>
+                        <Link href="/login">Login</Link>
+                    </div>
+                </nav>
             </header>
 
             <main>
