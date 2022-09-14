@@ -5,7 +5,7 @@ import { Store } from '../utils/Store'
 
 const Layout = ({title, children}) => {
 
-    const { state, dispatch } = useContext(Store);
+    const { state } = useContext(Store);
     const { cart } = state;
 
     return (
