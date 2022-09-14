@@ -16,8 +16,8 @@ const Layout = ({title, children}) => {
                         <a className='text-lg font-bold'>E-Commerce</a>
                     </Link>
                     <div>
-                        <Link href="/cart">Cart</Link>
-                        <Link href="/login">Login</Link>
+                        <Link href="/cart"><a className='p-2'>Cart</a></Link>
+                        <Link href="/login"><a className='p-2'>Login</a></Link>
                     </div>
                 </nav>
             </header>
