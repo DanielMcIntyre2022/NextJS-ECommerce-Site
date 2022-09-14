@@ -22,12 +22,12 @@ const Layout = ({title, children}) => {
                 </nav>
             </header>
 
-            <main>
+            <main className='container m-auto mt-4 px-4'>
                 {children}
             </main>
 
-            <footer>
-
+            <footer className='flex h-10 justify-center items-center shadow-inner'>
+                Footer
             </footer>
         </div>
      </>
