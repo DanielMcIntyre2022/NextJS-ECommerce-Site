@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
 const CartScreen = () => {
     const router = useRouter();
@@ -107,4 +108,4 @@ const CartScreen = () => {
     )
 };
 
-export default CartScreen;
+export default dynamic(() => Promise.resolve(CartScreen), {ssr:false})
