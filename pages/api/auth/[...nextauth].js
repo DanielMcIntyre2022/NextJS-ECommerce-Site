@@ -2,7 +2,7 @@ import NextAuth from "next-auth/next";
 import User from '../../../models/User';
 import db from "../../../utils/db";
 import bcryptjs from 'bcryptjs';
-import { CredentialsProvider } from "next-auth/providers";
+import CredentialsProvider from "next-auth/providers";
 
 export default NextAuth({
     session: {
@@ -37,6 +37,7 @@ export default NextAuth({
                         isAdmin: user.isAdmin,
                     };
                 }
+                throw new Error('Invalid email or password');
             }
         })
     ]
