@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "bcryptjs": "^2.4.3",
     "js-cookie": "^3.0.1",
     "moongoose": "^0.0.5",
     "next": "^12.3.0",
